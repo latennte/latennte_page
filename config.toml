@@ -12,7 +12,7 @@ compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
-theme = "even"
+# theme = "even"
 # theme = "terminimal"
 
 taxonomies = [
@@ -26,24 +26,24 @@ taxonomies = [
 # Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
 highlight_code = true
 
-[languages]
-[languages.pt]
-generate_feed = true # there will be a feed for French content
-build_search_index = true
-
-taxonomies = [
-    {name = "categorias"},
-    {name = "tags"},
-]
-
-[languages.en]
-generate_feed = true # there will be a feed for French content
-build_search_index = true
-
-taxonomies = [
-    {name = "categories"},
-    {name = "tags"},
-]
+# [languages]
+# [languages.pt]
+# generate_feed = true # there will be a feed for French content
+# build_search_index = true
+# 
+# taxonomies = [
+#     {name = "categorias"},
+#     {name = "tags"},
+# ]
+# 
+# [languages.en]
+# generate_feed = true # there will be a feed for French content
+# build_search_index = true
+# 
+# taxonomies = [
+#     {name = "categories"},
+#     {name = "tags"},
+# ]
 
 
 [extra]
@@ -53,7 +53,7 @@ katex_enable = true
 katex_auto_render = true
 
 even_menu = [
-    {url = "$BASE_URL", name = "Home"},
+    {url = "$BASE_URL", name = "Início"},
     {url = "$BASE_URL/categories", name = "Categorias"},
     {url = "$BASE_URL/tags", name = "Tags"},
     {url = "$BASE_URL/about", name = "Sobre"},

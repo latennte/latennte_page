@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+      <!-- Enable responsiveness on mobile devices-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+      <title>latennte - Label Smoothing</title>
+
+      
+
+      
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js"></script>
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.js" integrity="sha384-K3vbOmF2BtaVai+Qk37uypf7VrgBubhQreNQe9aGsz9lB63dIFiQVlJbr92dw2Lx" crossorigin="anonymous"></script>
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/mathtex-script-type.min.js" integrity="sha384-zWYbd0NBwgTsgIdFKVprSfTh1mbMPe5Hz1X3yY4Sd1h/K1cQoUe36OGwAGz/PcDy" crossorigin="anonymous"></script>
+              
+          <script defer src="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/contrib/auto-render.min.js" integrity="sha384-kmZOZB5ObwgQnS/DuDg6TScgOiWWBiVt0plIRkZCmE6rDZGrEOQeHM5PcHi+nyqe" crossorigin="anonymous"
+                  onload="renderMathInElement(document.body);"></script>
+              
+          
+      
+
+      
+          <link rel="stylesheet" href="https://latennte.com/site.css">
+          
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" integrity="sha384-9eLZqc9ds8eNjO3TmqPeYcDj8n+Qfa4nuSiGYa6DjLNcv9BtN69ZIulL9+8CqC9Y" crossorigin="anonymous">
+          
+      
+
+      
+      
+          <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.8.1"></script>
+          <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script> -->
+          <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-2.4.1.min.js"></script>
+          <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-2.4.1.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div id="mobile-navbar" class="mobile-navbar">
+              <div class="mobile-header-logo">
+                <a href="/" class="logo">latennte</a>
+              </div>
+              <div class="mobile-navbar-icon icon-out">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <nav id="mobile-menu" class="mobile-menu slideout-menu slideout-menu-left">
+              <ul class="mobile-menu-list">
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;latennte.com">
+                            Início
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;latennte.com&#x2F;categories">
+                            Categorias
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;latennte.com&#x2F;tags">
+                            Tags
+                        </a>
+                    </li>
+                
+                    <li class="mobile-menu-item">
+                        <a href="https:&#x2F;&#x2F;latennte.com&#x2F;about">
+                            Sobre
+                        </a>
+                    </li>
+                
+              </ul>
+            </nav>
+
+            <header id="header">
+                <div class="logo"><a href="https:&#x2F;&#x2F;latennte.com">latennte</a></div>
+                <nav class="menu">
+                    <ul>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;latennte.com">
+                                    Início
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;latennte.com&#x2F;categories">
+                                    Categorias
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;latennte.com&#x2F;tags">
+                                    Tags
+                                </a>
+                            </li>
+                        
+                            <li>
+                                <a href="https:&#x2F;&#x2F;latennte.com&#x2F;about">
+                                    Sobre
+                                </a>
+                            </li>
+                        
+                    </ul>
+                </nav>
+            </header>
+
+            <main>
+                <div class="content" id="mobile-panel">
+                    
+
+
+<div class="post-toc" id="post-toc">
+    <h2 class="post-toc-title">Contents</h2>
+    <div class="post-toc-content always-active">
+        <nav id="TableOfContents">
+            <ul>
+                
+                <li>
+                    <a href="https://latennte.com/label-smoothing/#motivacao" class="toc-link">Motivação</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://latennte.com/label-smoothing/#explicacao-intuitiva" class="toc-link">Explicação intuitiva</a>
+                    
+                </li>
+                
+                <li>
+                    <a href="https://latennte.com/label-smoothing/#detalhamento" class="toc-link">Detalhamento</a>
+                    
+                </li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<article class="post">
+    
+    <header class="post__header">
+        <h1 class="post__title">
+            <a href="https:&#x2F;&#x2F;latennte.com&#x2F;label-smoothing&#x2F;">Label Smoothing</a>
+        </h1>
+        <div class="post__meta">
+            <span class="post__time">criação: 2021-09-15</span>
+            <span class="post__time">atualização: 2021-09-15</span>
+            
+        </div>
+    </header>
+
+    <div class="post-content">
+      <!-- 
+* TODO Tópicos
+- [] Overfitting
+- [] Overconfident
+  + [] Incerteza
+  + [] Probabilidade
+  + [] Origem dessa incerteza
+- [] Explicação intuitiva
+  + [] O que é label-smoothing?
+- [] Benefícios
+- [] Formas de se atribuir as probabilidades
+- [] Aplicações além da classificação  
+ -->
+<h2 id="motivacao">Motivação</h2>
+<p>Redes neurais artificiais profundas são modelos com uma enorme <strong>capacidade</strong> de expressar relações existentes nos dados. Ao mesmo tempo que isso confere poder e as tornam úteis para as mais variadas e complexas tarefas, parte dessas relações podem ser apenas &quot;ruídos&quot;. Em outras palavras, coincidências podem ser confundidas pelos modelos como sendo relações verdadeiras, o que acaba sendo algo comum principalmente quando o conjunto de dados é pequeno ou a amostragem tem vieses ocultos significativos. A consequência mais direta desse tipo de problema é identificada na forma de sobreajuste (<em>overfitting</em>). No entanto, há consequências mais sutis como o <strong>excesso de confiança</strong> do modelo (<em>overconfidence</em>).</p>
+<p>O <u>excesso</u> de confiança está relacionado a uma estimativa ruim da <strong>incerteza</strong> do resultado. Um bom modelo, não é apenas o que erra pouco durante os testes, mas aquele que diz o quão certo ou incerto ele está sobre aquele resultado. :calibração:</p>
+<p>O label-smoothing, ou suavização dos rótulos, é uma técnica de regularização aplicada para reduzir tanto a ocorrência de <em>overfitting</em> quanto do excesso de confiança.</p>
+<h2 id="explicacao-intuitiva">Explicação intuitiva</h2>
+<p>Durante o treinamento de modelos para tarefas de classificação é comum que os dados utilizados tenham o label ( \( y \) ) da classe a qual pertencem, sendo \( y \in {0, 1} \) para classificação binária ou no formato de um vetor <em>one-hot encoding</em> para classificação em uma dentre múltiplas classes. Esse modo de representação contém, além da classe, a confiança sobre aquele rótulo - &quot;Eu tenho <strong>certeza</strong> que é A ( \( y=1 \) )&quot; ou &quot;Eu tenho <strong>certeza</strong> que <u>não</u> é A ( \( y=0 \) )&quot;. Logo, além da classe correta, fornecemos durante o treinamento a informação de absoluta certeza ou de nenhuma incerteza.</p>
+<p>Consequentemente, podemos reduzir possíveis excessos de confiança do modelo através dos rótulos. Para fazermos isso, o que anteriormente era certeza passa a conter uma leve incerteza - &quot;Eu estou <strong>quase certo</strong> que é A ( \( y=0.9 \) )&quot; ou &quot;Eu estou <strong>quase certo</strong> que <u>não</u> é A ( \( y=0.1 \) )&quot;. Isso é a suavização dos rótulos ou <em>label smoothing</em>! Esse tipo de representação dos rótulos é chamada de <em>soft</em> (<em>softlabel</em>), enquanto a tradicional, apenas com 0s e 1s, é a <em>hard</em>.</p>
+<h2 id="detalhamento">Detalhamento</h2>
+<p>Origem e uso básico</p>
+<p>Incerteza derivada de especialistas</p>
+<p>Destilação</p>
+<p>Aplicação em ranqueamento</p>
+<p><strong>side note</strong> No livro <em>Deep Learning</em> (Goodfellow, Courville, Bengio) dizem que a técnica de suavização dos rótulos </p>
+
+    </div>
+
+    
+    
+
+    <div class="post-footer">
+        
+            
+            
+                <div class="post-nav">
+                    
+                        <a class="previous" href="https:&#x2F;&#x2F;latennte.com&#x2F;about&#x2F;">‹ Sobre</a>
+                    
+                    
+                        <a class="next" href="https:&#x2F;&#x2F;latennte.com&#x2F;ipca-ibrx&#x2F;">Gráficos de IPCA e IBrX-100  ›</a>
+                    
+                    
+                    
+                </div>
+            
+
+        
+
+    </div>
+
+    
+    
+</article>
+
+
+                </div>
+            </main>
+
+            
+            
+        </div>
+
+      
+          <script type="text/javascript" src="https://latennte.com/even.js" ></script>
+      
+    </body>
+
+</html>
