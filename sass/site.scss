@@ -1,0 +1,53 @@
+@import "normalize";
+
+$theme-color-map: (
+  'Default': #c05b4d #f8f5ec,
+  'Mint Green': #16982B #f5f5f5,
+  'Cobalt Blue': #0047AB #f0f2f5,
+  'Hot Pink': #FF69B4 #f8f5f5,
+  'Dark Violet': #9932CC #f5f4fa
+);
+
+// TODO: allow to change that
+$main-colour: #c05b4d;
+$secondary-colour: #f8f5ec;
+$body-width: 800px;
+$mobile-navbar-height: 50px !default;
+$code-colour: #c7254e;
+$code-font-family: Consolas, Monaco, Menlo, Consolas, monospace !default;
+$decoration-font-family: Fira Sans, serif;
+
+@mixin min-screen($min-width: $body-width) {
+   @media screen and (min-width: $min-width) {
+     @content;
+   }
+}
+
+@mixin max-screen($max-width: $body-width) {
+   @media screen and (max-width: $max-width) {
+     @content;
+   }
+}
+
+@import "animations";
+
+@import "base";
+@import "header";
+@import "main";
+@import "mobile";
+@import "slideout";
+@import "toc";
+
+// @font-face {
+//   font-family: "Source Sans Pro";
+//   src: url("/static/fonts/SourceSansPro-Regular.ttf") format("truetype");
+// }
+
+@font-face { 
+  font-family: source sans pro; 
+  src: url("/static/font/ssp/SourceSansPro-BASIC-Regular.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: 400; 
+  font-display: swap; 
+  unicode-range: U+20-7E, U+A0-FF, U+2010, U+2013-2014, U+2018-2019, U+201C-201D, U+2212; 
+}
